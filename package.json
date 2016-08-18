@@ -1,0 +1,69 @@
+{
+  "name": "example-app",
+  "version": "0.0.1",
+  "description": "CanJS 3.0 with Feathers and StealJS",
+  "main": "app",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "npm run jshint && testee src/test.html --browsers firefox --reporter Spec",
+    "start": "done-serve --port 8080",
+    "develop": "done-serve --develop --port 8080",
+    "document": "documentjs",
+    "build": "node build",
+    "jshint": "jshint --config src/."
+  },
+  "author": {
+    "name": "Marshall Thompson",
+    "email": "marshall@creativeideal.net",
+    "url": "https://github.com/icanjs/steal-can-feathers"
+  },
+  "system": {
+    "directories": {
+      "lib": "src"
+    },
+    "npmAlgorithm": "flat",
+    "configDependencies": [
+      "live-reload"
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {
+    "can-component": "^3.0.0-pre.14",
+    "can-define": "^0.7.17",
+    "can-route": "^3.0.0-pre.13",
+    "can-route-pushstate": "^3.0.0-pre.3",
+    "can-stache": "^3.0.0-pre.6",
+    "can-view-autorender": "^3.0.0-pre.3",
+    "canjs-feathers": "^1.0.0-pre.1",
+    "done-component": "^0.6.0-pre.1",
+    "done-css": "~2.1.0-pre.0",
+    "done-serve": "^0.3.0-pre.0",
+    "engine.io-client": "^1.6.11",
+    "feathers": "^2.0.1",
+    "feathers-authentication": "^0.7.9",
+    "feathers-hooks": "^1.5.6",
+    "feathers-reactive": "^0.3.1",
+    "feathers-rest": "^1.4.3",
+    "feathers-socketio": "^1.4.1",
+    "generator-donejs": "^0.10.0-pre.0",
+    "jquery": "^3.1.0",
+    "rxjs": "^5.0.0-beta.11",
+    "socket.io-client": "^1.4.8",
+    "socket.io-parser": "^2.2.6",
+    "steal": "^0.16.35",
+    "steal-stache": "^3.0.0-pre.2"
+  },
+  "devDependencies": {
+    "can-fixture": "^0.4.0-pre.11",
+    "documentjs": "^0.4.2",
+    "donejs-cli": "^0.10.0-pre.0",
+    "donejs-deploy": "^0.4.0",
+    "funcunit": "~3.0.0",
+    "jshint": "^2.9.2",
+    "steal-qunit": "^0.1.1",
+    "steal-tools": "^0.16.6",
+    "testee": "^0.2.4"
+  }
+}

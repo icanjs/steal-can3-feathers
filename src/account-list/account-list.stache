@@ -1,0 +1,72 @@
+<div>
+  {{#if allAccountsPromise}}
+    <h3>All Accounts</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each allAccounts}}
+          <tr>
+            <td><a href="javascript://" ($click)="edit(.)">{{name}}</a></td>
+            <td>{{type}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</div>
+
+<div>
+  {{#if checkingAccountsPromise}}
+    <h3>Checking Accounts</h3>
+    <ul>
+      {{#each checkingAccounts}}
+        <li>
+          <a href="javascript://" ($click)="edit(.)">{{name}}</a>
+          <span>{{type}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>
+
+<div>
+  {{#if savingsAccountsPromise}}
+    <h3>Savings Accounts</h3>
+    <ul>
+      {{#each savingsAccounts}}
+        <li>
+          <a href="javascript://" ($click)="edit(.)">{{name}}</a>
+          <span>{{type}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>
+
+<div>
+  {{#if loanAccountsPromise}}
+    <h3>Loan Accounts</h3>
+    <ul>
+      {{#each loanAccounts}}
+        <li>
+          <a href="javascript://" ($click)="edit(.)">{{name}}</a>
+          <span>{{type}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>
+
+<input type="text" name="name" value="" {($value)}="account.name" ($enter)="save(account)">
+<select type="select" name="name" value="" {($value)}="account.type">
+  {{#each accountTypes}}
+    <option>{{name}}</option>
+  {{/each}}
+</select>
+<button ($click)="save(account)">Save</button>
+<button ($click)="reset()">Reset</button>
