@@ -1,65 +1,65 @@
 <div>
-  {{#if allAccountsPromise}}
-    <h3>All Accounts</h3>
-    <table>
-      <thead>
+  <h3>All Accounts</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each allAccounts as account}}
         <tr>
-          <th>Name</th>
-          <th>Type</th>
+          <td><a href="javascript://" ($click)="edit(.)">{{name}}</a></td>
+          <td>{{type}}</td>
+          <td><button href="javascript://" ($click)="account.destroy()">delete</button></td>
         </tr>
-      </thead>
-      <tbody>
-        {{#each allAccounts}}
-          <tr>
-            <td><a href="javascript://" ($click)="edit(.)">{{name}}</a></td>
-            <td>{{type}}</td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  {{/if}}
+      {{/each}}
+    </tbody>
+  </table>
 </div>
 
 <div>
-  {{#if checkingAccountsPromise}}
-    <h3>Checking Accounts</h3>
-    <ul>
-      {{#each checkingAccounts}}
-        <li>
-          <a href="javascript://" ($click)="edit(.)">{{name}}</a>
-          <span>{{type}}</span>
-        </li>
+  <h3>Checking Accounts</h3>
+  <table>
+    <tbody>
+      {{#each checkingAccounts as account}}
+        <tr>
+          <td><a href="javascript://" ($click)="edit(.)">{{name}}</a></td>
+          <td><button href="javascript://" ($click)="account.destroy()">delete</button></td>
+        </tr>
       {{/each}}
-    </ul>
-  {{/if}}
+    </tbody>
+  </table>
 </div>
 
 <div>
-  {{#if savingsAccountsPromise}}
-    <h3>Savings Accounts</h3>
-    <ul>
-      {{#each savingsAccounts}}
-        <li>
-          <a href="javascript://" ($click)="edit(.)">{{name}}</a>
-          <span>{{type}}</span>
-        </li>
+  <h3>Savings Accounts</h3>
+  <table>
+    <tbody>
+      {{#each savingsAccounts as account}}
+        <tr>
+          <td><a href="javascript://" ($click)="edit(.)">{{name}}</a></td>
+          <td><button href="javascript://" ($click)="account.destroy()">delete</button></td>
+        </tr>
       {{/each}}
-    </ul>
-  {{/if}}
+    </tbody>
+  </table>
 </div>
 
 <div>
-  {{#if loanAccountsPromise}}
-    <h3>Loan Accounts</h3>
-    <ul>
-      {{#each loanAccounts}}
-        <li>
-          <a href="javascript://" ($click)="edit(.)">{{name}}</a>
-          <span>{{type}}</span>
-        </li>
+  <h3>Loan Accounts</h3>
+  <table>
+    <tbody>
+      {{#each loanAccounts as account}}
+        <tr>
+          <td><a href="javascript://" ($click)="edit(.)">{{name}}</a></td>
+          <td><button href="javascript://" ($click)="account.destroy()">delete</button></td>
+        </tr>
       {{/each}}
-    </ul>
-  {{/if}}
+    </tbody>
+  </table>
 </div>
 
 <input type="text" name="name" value="" {($value)}="account.name" ($enter)="save(account)">

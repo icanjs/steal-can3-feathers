@@ -11,47 +11,23 @@ export const ViewModel = DefineMap.extend({
   },
   checkingAccounts: {
     Type: Account.List,
-    value: []
+    value: [],
+    get(){
+      return this.allAccounts.filter(account => account.type === 'Checking');
+    }
   },
   savingsAccounts: {
     Type: Account.List,
-    value: []
+    value: [],
+    get(){
+      return this.allAccounts.filter(account => account.type === 'Savings');
+    }
   },
   loanAccounts: {
     Type: Account.List,
-    value: []
-  },
-  allAccountsPromise: {
+    value: [],
     get(){
-      return Account.find({}).subscribe(response => {
-        this.allAccounts.replace(response.data);
-        console.log(this.allAccounts);
-        return response.data;
-      });
-    }
-  },
-  checkingAccountsPromise: {
-    get(){
-      return Account.find({type: 'Checking'}).subscribe(response => {
-        this.checkingAccounts.replace(response.data);
-        return response.data;
-      });
-    }
-  },
-  savingsAccountsPromise: {
-    get(){
-      return Account.find({type: 'Savings'}).subscribe(response => {
-        this.savingsAccounts.replace(response.data);
-        return response.data;
-      });
-    }
-  },
-  loanAccountsPromise: {
-    get(){
-      return Account.find({type: 'Loan'}).subscribe(response => {
-        this.loanAccounts.replace(response.data);
-        return response.data;
-      });
+      return this.allAccounts.filter(account => account.type === 'Loan');
     }
   },
   account: {
@@ -70,7 +46,6 @@ export const ViewModel = DefineMap.extend({
   },
   edit(account){
     this.account = account;
-    console.log(account);
   },
   reset(){
     this.account = {
@@ -80,8 +55,13 @@ export const ViewModel = DefineMap.extend({
   },
   save(newAccount){
   newAccount.save().then(() => {
-      // this.accounts.push(res);
       this.reset();
+    });
+  },
+  setupObservables(){
+    Account.find({$sort:{'name': 1}}).subscribe(response => {
+      this.allAccounts.replace(response.data);
+      return response;
     });
   }
 });
@@ -92,10 +72,7 @@ export default Component.extend({
   template,
   events: {
     init(){
-      console.log('init');
-    },
-    inserted() {
-      console.log('inserted');
+      this.viewModel.setupObservables();
     }
   }
 });

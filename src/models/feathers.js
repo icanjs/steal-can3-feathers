@@ -15,7 +15,9 @@ const socket = io(host, {
   forceReconnect: true
 });
 const app = feathers()
-  .configure(rx(rxjs))
+  .configure(rx(rxjs, {
+    idField: '_id'
+  }))
   .configure(hooks())
   .configure(socketio(socket));
   // .configure(rest(host).jquery(jQuery));
