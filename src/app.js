@@ -25,9 +25,6 @@ function render() {
 }
 
 // Enable hot module swap
-reload(function(){
-	render();
-  appState.set(appState.get());
-});
+reload(render);
 
 render();

@@ -1,7 +1,7 @@
 import DefineMap from 'can-define/map/';
 import DefineList from 'can-define/list/';
 import feathers from './feathers';
-import CanService from 'canjs-feathers';
+import connection from 'canjs-feathers';
 
 export const Account = DefineMap.extend('Account', {
   seal: false
@@ -23,7 +23,7 @@ Account.List = DefineList.extend({
   total: 'number'
 });
 
-new CanService({
+new connection({
   service: feathers.service('accounts'),
   idProp: '_id',
   Map: Account,

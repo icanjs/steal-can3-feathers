@@ -8,6 +8,6 @@
 
     <h1>{{message}}</h1>
 
-    <account-list></account-list>
+    <!-- <account-list></account-list> -->
   </body>
 </html>

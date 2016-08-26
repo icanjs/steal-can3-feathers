@@ -7,7 +7,7 @@ import Account from 'example-app/models/account';
 export const ViewModel = DefineMap.extend({
   allAccounts: {
     Type: Account.List,
-    value: []
+    Value: Account.List
   },
   checkingAccounts: {
     Type: Account.List,
@@ -32,9 +32,11 @@ export const ViewModel = DefineMap.extend({
   },
   account: {
     Type: Account,
-    value: {
-      name: '',
-      type: 'Checking'
+    value() {
+      return {
+        name: '',
+        type: 'Checking'
+      };
     }
   },
   accountTypes: {

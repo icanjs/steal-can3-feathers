@@ -2,7 +2,7 @@
   "name": "example-app",
   "version": "0.0.1",
   "description": "CanJS 3.0 with Feathers and StealJS",
-  "main": "app",
+  "main": "app.js",
   "files": [
     "src"
   ],
@@ -31,36 +31,37 @@
   "license": "MIT",
   "dependencies": {
     "can-component": "^3.0.0-pre.14",
-    "can-define": "^0.7.19",
+    "can-define": "^0.7.24",
     "can-route": "^3.0.0-pre.13",
     "can-route-pushstate": "^3.0.0-pre.3",
     "can-stache": "^3.0.0-pre.6",
     "can-view-autorender": "^3.0.0-pre.3",
-    "canjs-feathers": "^1.0.0-pre.3",
-    "done-component": "^0.6.0-pre.1",
-    "done-css": "~2.1.0-pre.0",
+    "canjs-feathers": "^1.0.0",
     "feathers": "^2.0.1",
     "feathers-authentication": "^0.7.9",
-    "feathers-hooks": "^1.5.6",
+    "feathers-hooks": "^1.5.7",
     "feathers-reactive": "^0.3.1",
-    "feathers-rest": "^1.4.3",
+    "feathers-rest": "^1.4.4",
     "feathers-socketio": "^1.4.1",
     "generator-donejs": "^0.10.0-pre.0",
     "jquery": "^3.1.0",
+    "jshint": "^2.9.3",
     "rxjs": "^5.0.0-beta.11",
     "socket.io-client": "^1.4.8",
-    "steal": "^0.16.35",
-    "steal-stache": "^3.0.0-pre.2"
+    "steal": "^0.16.0",
+    "steal-stache": "^3.0.0-pre.3"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.5",
     "can-fixture": "^0.4.0-pre.11",
     "documentjs": "^0.4.2",
     "donejs-cli": "^0.10.0-pre.0",
     "donejs-deploy": "^0.4.0",
     "funcunit": "~3.0.0",
     "jshint": "^2.9.2",
+    "raw-loader": "^0.5.1",
     "steal-qunit": "^0.1.1",
-    "steal-tools": "^0.16.6",
+    "steal-tools": "^0.16.0",
     "testee": "^0.2.4"
   }
 }
