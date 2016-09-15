@@ -55,6 +55,7 @@
     "babel-loader": "^6.2.5",
     "can-fixture": "^0.4.0-pre.11",
     "documentjs": "^0.4.2",
+    "done-serve": "^0.3.0-pre.0",
     "donejs-cli": "^0.10.0-pre.0",
     "donejs-deploy": "^0.4.0",
     "funcunit": "~3.0.0",
