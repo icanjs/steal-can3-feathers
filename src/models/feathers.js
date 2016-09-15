@@ -1,7 +1,7 @@
 import feathers from 'feathers/client';
 import socketio from 'feathers-socketio/client';
 import hooks from 'feathers-hooks';
-import io from 'socket.io-client';
+import io from 'steal-socket.io';
 // import rest from 'feathers-rest/client';
 // import jQuery from 'jquery';
 // import auth from 'feathers-authentication/client';

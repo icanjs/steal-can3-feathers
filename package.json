@@ -49,6 +49,7 @@
     "rxjs": "^5.0.0-beta.11",
     "socket.io-client": "^1.4.8",
     "steal": "^0.16.0",
+    "steal-socket.io": "^2.0.4",
     "steal-stache": "^3.0.0-pre.3"
   },
   "devDependencies": {
